@@ -10,6 +10,7 @@
 // B - communication 3 - 4 comes before 2 - 3
 // X - processor 1 receives data from 1 - 2 communication
 // Y - processor 3 receives data from 2 - 3 communication
+// Z - X or Y
 
 min: T
 
@@ -19,6 +20,7 @@ T > t3
 T > t4
 
 X + Y < 1
+Z = X + Y
 
 t1 > te12 + A1 dii1
 t2 > te12 + A2 dii2
@@ -46,10 +48,15 @@ V1 - d1 - M X < d12
 V1 + d12 - M + M X < d1
 d1 - M + M X < V1 + d12
 
-// TODO: add sending rules for P2
 // 1 -> 2 <- 3 => d2 = d12 + d23
+d2 - M Z < d12 + d23
+d12 + d23 - M Z < d2
+
 // 1 -> 2 -> 3 => d2 = d12 - d23
+d2 > d12 - d23
+
 // 1 <- 2 <- 3 => d2 = d23 - d12
+d2 > d23 - d12
 
 // d3 = V2 - d23 - d34
 V2 - d23 - d34 - M Y < d3
@@ -65,4 +72,4 @@ ts23 > te12 + A2 di2 - M + M A
 ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
 
-bin A, B, X, Y
+bin A, B, X, Y, Z
