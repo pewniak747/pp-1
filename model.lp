@@ -46,10 +46,21 @@ V1 - d1 - M X < d12
 V1 + d12 - M + M X < d1
 d1 - M + M X < V1 + d12
 
-// TODO: add sending rules for P2, P3
+// TODO: add sending rules for P2
+// 1 -> 2 <- 3 => d2 = d12 + d23
+// 1 -> 2 -> 3 => d2 = d12 - d23
+// 1 <- 2 <- 3 => d2 = d23 - d12
+
+// d3 = V2 - d23 - d34
+V2 - d23 - d34 - M Y < d3
+d3 - M Y < V2 - d23 - d34
+
+// d3 = V2 + d23 - d34
+V2 + d23 - d34 - M + M Y < d3
+d3 - M + M Y < V2 + d23 - d34
 
 ts12 > A1 di1
-ts12 > te23 + A2 di2- M A
+ts12 > te23 + A2 di2 - M A
 ts23 > te12 + A2 di2 - M + M A
 ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
