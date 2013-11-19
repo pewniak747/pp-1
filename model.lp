@@ -1,0 +1,57 @@
+// tx - moment of computation finish on x
+// tsxy - moment of x - y communication start
+// texy- moment of x - y communication end
+// txy - duration of x - y communication
+// dx - amount of data processed on x
+// dix - amount of data processed on x in first batch
+// diix - amount of data processed on x in second batch
+// dxy - amount of data transferred in communication x - y
+// A - communication 1 - 2 comes before 2 - 3
+// B - communication 3 - 4 comes before 2 - 3
+// X - processor 1 receives data from 1 - 2 communication
+// Y - processor 3 receives data from 2 - 3 communication
+
+min: T
+
+T > t1
+T > t2
+T > t3
+T > t4
+
+X + Y < 1
+
+t1 > te12 + A1 dii1
+t2 > te12 + A2 dii2
+t2 > te23 + A2 dii2
+t3 > te34 + A3 dii3
+t3 > te23 + A3 dii3
+t4 = te34 + A4 d4
+
+t12 = C12 d12
+t23 = C23 d23
+t34 = C34 d34
+
+te12 = ts12 + C12 d12
+te23 = ts23 + C23 d23
+te34 = ts34 + C34 d34
+
+d1 = di1 + dii1
+d2 = di2 + dii2
+d3 = di3 + dii3
+d4 = d34
+d1 + d2 + d3 + d4 = V1 + V2
+
+d12 - M X < V1 - d1
+V1 - d1 - M X < d12
+V1 + d12 - M + M X < d1
+d1 - M + M X < V1 + d12
+
+// TODO: add sending rules for P2, P3
+
+ts12 > A1 di1
+ts12 > te23 + A2 di2- M A
+ts23 > te12 + A2 di2 - M + M A
+ts34 > te23 + A3 di3 - M B
+ts23 > te34 + A3 di3 - M + M B
+
+bin A, B, X, Y
