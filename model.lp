@@ -73,3 +73,4 @@ ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
 
 bin A, B, X, Y, Z
+int d1 d2 d3 d4 d12 d23 d34 di1 di2 di3 dii1 dii2 dii3
