@@ -57,7 +57,9 @@ bar(3, start, start + data['A3'] * data['dii3'], 'processing')
 
 bar(4, data['te34'], data['te34'] + data['A4'] * data['d4'], 'processing')
 
-plt.xlim(0, data['T'])
+plt.axvline(data['T'])
+plt.yticks([0.5, 1.5, 2.5, 3.5], ["P1", "P2", "P3", "P4"])
+plt.xlim(0, 1.2*data['T'])
 plt.ylim(0, 4)
 plt.show()
 
