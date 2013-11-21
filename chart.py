@@ -26,6 +26,8 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 
 def bar(processor, start, end, typebar):
+  if start == end:
+    return
   margin = 0
   if typebar == 'communication':
     color = 'b'
@@ -61,5 +63,6 @@ plt.axvline(data['T'])
 plt.yticks([0.5, 1.5, 2.5, 3.5], ["P1", "P2", "P3", "P4"])
 plt.xlim(0, 1.2*data['T'])
 plt.ylim(0, 4)
+plt.xlabel("time")
 plt.show()
 
