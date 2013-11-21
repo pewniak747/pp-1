@@ -26,13 +26,12 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 
 def bar(processor, start, end, typebar):
+  margin = 0
   if typebar == 'communication':
     color = 'b'
-    margin = 0.2
   elif typebar == 'processing':
     color = 'y'
-    margin = 0.1
-  rectangle = patches.Rectangle((start, processor - 1 + margin), end-start, 1 - 2*margin, color=color)
+  rectangle = patches.Rectangle((start, processor - 1 + margin), end-start, 1 - 2*margin, color=color, alpha=0.7)
   ax.add_patch(rectangle)
 
 bar(1, data['ts12'], data['te12'], 'communication')
