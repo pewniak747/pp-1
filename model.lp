@@ -11,6 +11,7 @@
 // X - processor 1 receives data from 1 - 2 communication
 // Y - processor 3 receives data from 2 - 3 communication
 // Z - X or Y
+// Q - 1 - 2 ends before 3 - 4
 
 min: T
 
@@ -72,5 +73,9 @@ ts23 > te12 + A2 di2 - M + M A
 ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
 
-bin A, B, X, Y, Z
+Q = te12 - te34
+ts23 - M - M - M + M B + M A + M Q < te12
+ts23 - M - M + M B + M A - M Q < te34
+
+bin A, B, X, Y, Z, Q
 int d1 d2 d3 d4 d12 d23 d34 di1 di2 di3 dii1 dii2 dii3
