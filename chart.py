@@ -18,7 +18,7 @@ for line in lines:
   if search:
     data['T'] = float(search.group(1))
   else:
-    search = re.search('(\w+)\s+([\d\.]+)', line)
+    search = re.search('(\w+)\s+([\d\.\-e]+)', line)
     if search:
       data[search.group(1)] = float(search.group(2))
 
