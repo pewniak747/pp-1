@@ -22,6 +22,7 @@ T > t4
 
 X + Y < 1
 Z = X + Y
+Q = te12 - te34
 
 t1 > te12 + A1 dii1
 t2 > te12 + A2 dii2
@@ -34,9 +35,9 @@ t12 = C12 d12
 t23 = C23 d23
 t34 = C34 d34
 
-te12 = ts12 + C12 d12
-te23 = ts23 + C23 d23
-te34 = ts34 + C34 d34
+te12 = ts12 + t12
+te23 = ts23 + t23
+te34 = ts34 + t34
 
 d1 = di1 + dii1
 d2 = di2 + dii2
@@ -67,13 +68,15 @@ d3 - M Y < V2 - d23 - d34
 V2 + d23 - d34 - M + M Y < d3
 d3 - M + M Y < V2 + d23 - d34
 
+di1 < V1
+di3 < V2
+
 ts12 > A1 di1
 ts12 > te23 + A2 di2 - M A
 ts23 > te12 + A2 di2 - M + M A
 ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
 
-Q = te12 - te34
 ts23 - M - M - M + M B + M A + M Q < te12
 ts23 - M - M + M B + M A - M Q < te34
 
