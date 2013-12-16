@@ -22,7 +22,10 @@ T > t4
 
 X + Y < 1
 Z = X + Y
+//warunek na to by P2 nie wysyłał gdy nie ma danych
+A + X < 1
 Q = te12 - te34
+//Q = te34 - te12
 
 t1 > te12 + A1 dii1
 t2 > te12 + A2 dii2
@@ -70,6 +73,7 @@ d3 - M + M Y < V2 + d23 - d34
 
 di1 < V1
 di3 < V2
+di2 < d12
 
 ts12 > A1 di1
 ts12 > te23 + A2 di2 - M A
@@ -78,7 +82,9 @@ ts34 > te23 + A3 di3 - M B
 ts23 > te34 + A3 di3 - M + M B
 
 ts23 - M - M - M + M B + M A + M Q < te12
-ts23 - M - M + M B + M A - M Q < te34
+ts23 - M + M A > te12
+ts23 - M - M + M B + M A - M Q > te34
+ts23 - M + M B < te34
 
 bin A, B, X, Y, Z, Q
 int d1 d2 d3 d4 d12 d23 d34 di1 di2 di3 dii1 dii2 dii3
