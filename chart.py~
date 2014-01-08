@@ -57,7 +57,7 @@ processing(1, data['te12'], data['A1'] * data['dii1'])
 processing(2, min(data['te12'], data['te23']), data['A2'] * data['di2'])
 processing(2, max(data['te12'], data['te23']), data['A2'] * data['dii2'])
 
-processing(3, data['te34'], data['A3'] * data['di3'])
+processing(3, 0, data['A3'] * data['di3'])
 processing(3, max(data['te34'], data['te23']), data['A3'] * data['dii3'])
 
 processing(4, data['te34'], data['A4'] * data['d4'])

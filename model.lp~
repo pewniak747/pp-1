@@ -23,7 +23,7 @@ T > t4
 X + Y < 1
 Z = X + Y
 //warunek na to by P2 nie wysyłał gdy nie ma danych
-A + X < 1
+//A + X < 1
 //Q = te12 - te34
 //Q = te34 - te12
 

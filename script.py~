@@ -1,0 +1,10 @@
+import os
+import glob
+import matplotlib.pyplot as plt
+
+if __name__ == '__main__':
+	for files in glob.glob("*.yml"):
+		command = "./precompiler.rb model.lp "+files+" | lp_solve"
+		f = os.popen(command)
+		print f
+		
